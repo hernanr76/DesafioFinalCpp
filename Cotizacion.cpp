@@ -111,7 +111,7 @@ void Cotizacion::Calcular()
 
 	if (prenda->getCalidad() == Prenda::premium)
 	{
-		resultado += .3;
+		resultado += resultado * .3;
 	}
 
 }
