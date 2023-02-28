@@ -9,3 +9,8 @@ Pantalon::~Pantalon()
 {
 
 }
+
+string Pantalon::Nombre()
+{
+	return "Pantalón";
+}

@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Model">
       <UniqueIdentifier>{74fbe11f-aa26-4e8b-9c3e-e04b486f18b3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Model\Factory">
+      <UniqueIdentifier>{feb95571-dd78-4f9e-852a-0bebe1a14ddc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DesafioFinalCpp.cpp">
@@ -60,6 +63,18 @@
     <ClCompile Include="Tienda.cpp">
       <Filter>Source Files\Model</Filter>
     </ClCompile>
+    <ClCompile Include="IView.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="View.cpp">
+      <Filter>Source Files\View</Filter>
+    </ClCompile>
+    <ClCompile Include="Presenter.cpp">
+      <Filter>Source Files\Presenter</Filter>
+    </ClCompile>
+    <ClCompile Include="PrendaFactory.cpp">
+      <Filter>Source Files\Model\Factory</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Vendedor.h">
@@ -90,6 +105,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Tienda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IView.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="View.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Presenter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PrendaFactory.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

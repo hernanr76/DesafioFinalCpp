@@ -6,7 +6,7 @@ public:
 	enum Cuello { mao, comun };
 	Camisa();
 	~Camisa();
-	virtual string Nombre() = 0;
+	virtual string Nombre();
 	void setCuello(Cuello cuello);
 	Cuello getCuello();
 private:

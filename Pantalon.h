@@ -5,6 +5,6 @@ class Pantalon : public Prenda
 public:
 	Pantalon();
 	~Pantalon();
-	virtual string Nombre() = 0;
+	virtual string Nombre();
 };
 

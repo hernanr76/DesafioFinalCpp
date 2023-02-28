@@ -1,13 +1,21 @@
 #include "Cotizacion.h"
+#include "Camisa.h"
+#include "CamisaMangaCorta.h"
+#include "CamisaMangaLarga.h"
+#include "PantalonChupin.h"
 
 Cotizacion::Cotizacion()
 {
-
+	cantidad = 0;
+	fecha = std::time(0);
+	id = 0;
+	prenda = nullptr;
+	vendedor = nullptr;
+	resultado = 0;
 }
 
 Cotizacion::~Cotizacion()
 {
-
 }
 
 void Cotizacion::setId(int id)
@@ -18,11 +26,6 @@ void Cotizacion::setId(int id)
 void Cotizacion::setFecha(time_t fecha)
 {
 	this->fecha = fecha;
-}
-
-void Cotizacion::setCodigo(string codigo)
-{
-	this->codigo = codigo;
 }
 
 void Cotizacion::setVendedor(Vendedor* vendedor)
@@ -55,11 +58,6 @@ time_t Cotizacion::getFecha()
 	return fecha;
 }
 
-string Cotizacion::getCodigo()
-{
-	return codigo;
-}
-
 Vendedor* Cotizacion::getVendedor()
 {
 	return vendedor;
@@ -78,4 +76,42 @@ int Cotizacion::getCantidad()
 double Cotizacion::getResultado()
 {
 	return resultado;
+}
+
+void Cotizacion::Calcular()
+{
+
+	if (prenda == nullptr)
+		throw new exception("La cotización no tiene prenda");
+
+	if (vendedor == nullptr)
+		throw new exception("La cotización no tiene vendedor");
+
+	resultado = prenda->getPrecio() * cantidad;
+
+	auto esCamisa = dynamic_cast<Camisa*>(prenda);
+	auto esCamisaMC = dynamic_cast<CamisaMangaCorta*>(prenda);
+	auto esCamisaML = dynamic_cast<CamisaMangaLarga*>(prenda);
+	auto esPantalonChupin = dynamic_cast<PantalonChupin*>(prenda);
+
+	if (esCamisaMC != nullptr)
+	{
+		resultado -= resultado * .1;
+	}
+
+	if (esCamisa != nullptr && esCamisa->getCuello() == Camisa::mao)
+	{
+		resultado += resultado * .03;
+	}
+
+	if (esPantalonChupin != nullptr)
+	{
+		resultado -= resultado * .12;
+	}
+
+	if (prenda->getCalidad() == Prenda::premium)
+	{
+		resultado += .3;
+	}
+
 }
