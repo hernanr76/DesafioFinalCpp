@@ -11,7 +11,7 @@ const std::string PRESIONE_X_PARA_VOLVER = "------------------------------------
 
 View::View()
 {
-	SetConsoleTitleW(L"The Soldier");
+	SetConsoleTitleW(L"Desafío final CPP");
 	setlocale(LC_ALL, "es_Es");
 	m_presenter = new Presenter(this);
 	showMainMenu();
